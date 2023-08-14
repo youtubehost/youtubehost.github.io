@@ -7,6 +7,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const zone_id = urlParams.get('source');
         Histats_variables.push("zone_id",zone_id);
+        Histats_variables.push("referrer",document.referrer);
     </script>
     <script type="text/javascript">
         var _Hasync= _Hasync|| [];
