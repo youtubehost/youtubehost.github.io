@@ -16,7 +16,7 @@
         // Update the query parameters in the URL
         url.search = queryParams.toString();
         let customUrl = url.protocol + "//" + url.hostname + url.pathname.replace(/\/$/, '')
-        const final_url = customUrl + "/zone|" + zone_id + "/clickid|" + queryParams.get('click_id') + "/cost|" + queryParams.get('cost') + "/campaign|" + queryParams.get('campaign_id') + "/creative|" + queryParams.get('creative_id');
+        const final_url = customUrl + "/zone-" + zone_id + "|clickid-" + queryParams.get('click_id') + "|cost-" + queryParams.get('cost') + "|campaign-" + queryParams.get('campaign_id') + "|creative-" + queryParams.get('creative_id');
         plausible('pageview', { u: final_url, props: {zone_id: zone_id}});
     </script>
 </head>
