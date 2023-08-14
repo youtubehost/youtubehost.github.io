@@ -15,7 +15,8 @@
         queryParams.set('source', document.referrer);
         // Update the query parameters in the URL
         url.search = queryParams.toString();
-        const final_url = url.toString() + "/zone_" + zone_id + "/clickid_" + queryParams.get('click_id') + "/cost_" + queryParams.get('cost') + "/campaign_" + queryParams.get('campaign_id') + "/creative_" + queryParams.get('creative_id');
+        let customUrl = url.protocol + "//" + url.hostname + url.pathname.replace(/\/$/, '')
+        const final_url = customUrl + "/zone|" + zone_id + "/clickid|" + queryParams.get('click_id') + "/cost|" + queryParams.get('cost') + "/campaign|" + queryParams.get('campaign_id') + "/creative|" + queryParams.get('creative_id');
         plausible('pageview', { u: final_url, props: {zone_id: zone_id}});
     </script>
 </head>
